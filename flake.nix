@@ -18,7 +18,7 @@
 
       perSystem = { self', system, pkgs, lib, config, inputs', ... }: {
         overlayAttrs = {
-          inherit (config.packages) my-package;
+          inherit (config.packages) sdrpp;
         };
         packages.sdrpp = pkgs.callPackage ./sdrpp.nix { src = inputs.sdrpp; inherit (pkgs.darwin.apple_sdk.frameworks) AppKit; };
         packages.default = config.packages.sdrpp;
